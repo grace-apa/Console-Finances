@@ -101,6 +101,6 @@ for (var i = 0; i < finances.length; i++) {
   totalAmount = totalAmount + finances[i][1];
 }
 
-console.log("Total:" + totalAmount);
+console.log("Total:" + "$" + totalAmount);
 
 // The average of the **changes** in Profit/Losses over the entire period.
