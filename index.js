@@ -98,7 +98,9 @@ console.log("Total Months:" + totalMonths);
 var totalAmount = 0;
 
 for (var i = 0; i < finances.length; i++) {
-  console.log("Total:", totalAmount + finances[i]);
+  totalAmount = totalAmount + finances[i][1];
 }
+
+console.log("Total:" + totalAmount);
 
 // The average of the **changes** in Profit/Losses over the entire period.
