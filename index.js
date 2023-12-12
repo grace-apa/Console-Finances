@@ -92,6 +92,8 @@ var change = 0;
 var totalMonths = finances.length;
 var totalAmount = 0;
 var monthAverage;
+var greatestIncrease = { date: "", amount: 0 };
+var greatestDecrease = { date: "", amount: 0 };
 
 console.log("Financial Analysis");
 
@@ -106,14 +108,41 @@ for (var i = 0; i < totalMonths; i++) {
     var change = finances[i][1] - finances[i - 1][1];
   }
   totalChange = totalChange + change;
-
-  // Greatest Increase in Profits/Losses:
-
-  // Greatest Decrease in Profits/Losses:
 }
+
+for (var i = 0; i < totalMonths; i++) {
+  totalAmount += finances[i][1];
+
+  if (i > 0) {
+    var change = finances[i][1] - finances[i - 1][1];
+
+    if (change > greatestIncrease.amount) {
+      greatestIncrease.amount = change;
+      greatestIncrease.date = finances[i][0];
+    }
+    if (change < greatestDecrease.amount) {
+      greatestDecrease.amount = change;
+      greatestDecrease.date = finances[i][0];
+    }
+    totalChange += change;
+  }
+}
+
 var totalAvgChange =
   Math.round((totalChange / (finances.length - 1)) * 100) / 100;
 
 console.log("Total:" + "$" + totalAmount);
 console.log("Total Months:" + totalMonths);
 console.log("Average changes: " + totalAvgChange);
+console.log(
+  "Greatest Increase in Profits/Losses: " +
+    greatestIncrease.date +
+    "$" +
+    greatestIncrease.amount
+);
+console.log(
+  "Greatest Decrease in Profits/losses: " +
+    greatestDecrease.date +
+    "$" +
+    greatestDecrease.amount
+);
