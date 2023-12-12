@@ -13,4 +13,4 @@ This involves writing JavaScript code that analyzes the records to calculate eac
 ## Technologies used
 
 - HTML
-- Javascript
+- JavaScript
