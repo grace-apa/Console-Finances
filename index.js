@@ -104,3 +104,26 @@ for (var i = 0; i < finances.length; i++) {
 console.log("Total:" + "$" + totalAmount);
 
 // The average of the **changes** in Profit/Losses over the entire period.
+// - You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+// - (`Total/(Number of months - 1)`)
+
+// 1. Firstly, work out what that change is, from the previous month:
+// 2. take that overall number and dvivide it by the amount of results you have
+// 3. this should give a %, times it by 100 and then divide it by 100
+
+var totalChanges = 0;
+
+for (var k = 0; i < finances.length - 1; k++) {
+  totalChanges.push(finances[k + 1][1] - finances[k + 1][1];
+}
+
+// for (var k = 0; i < finances.length - 1; k++) {
+//   var currentMonthProfit = finances[k][1];
+//   var previousMonthProfit = finances[k - 1][1];
+//   var monthlyChange = currentMonthProfit - previousMonthProfit;
+//   totalChanges += monthlyChange;
+//   var numberofMonths = finances.length - 1;
+// }
+
+var averageChange = totalChanges / numberOfMonths;
+console.log("Average change in Profit/Losses:", averageChange);
