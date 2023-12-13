@@ -137,12 +137,12 @@ console.log("Average changes: " + totalAvgChange);
 console.log(
   "Greatest Increase in Profits/Losses: " +
     greatestIncrease.date +
-    "$ " +
+    " $" +
     greatestIncrease.amount
 );
 console.log(
   "Greatest Decrease in Profits/losses: " +
     greatestDecrease.date +
-    "$ " +
+    " $" +
     greatestDecrease.amount
 );
